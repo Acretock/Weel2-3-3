@@ -1,20 +1,52 @@
-// Week2-3-3.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+#include <map>
+#include <string>
 #include <iostream>
+#include <vector>
+#include <sstream>
+using namespace std;
+
+void New_Bus(map<string, string>& buses, map<string, string>& stops, string bus, vector<string> stop) {
+
+}
+
+void Buses_For_Stop(map<string, string>& map, string stop) {
+	
+}
+
+void Stops_For_Bus(map<string, string>& map, string bus) {
+
+}
+
+void All_Buses(map<string, string>& map) {
+
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int N,m;
+	string line, command, str1, tmp;
+	map<string, string> buses;
+	map<string, string> stops;
+	vector<string> stop;
+	cin >> N;
+	for (int i = 0; i <= N; i++) {
+		getline(cin, line);
+		stringstream ss(line);
+		ss >> command;
+		ss >> str1;
+		if (command == "NEW_BUS") {
+			ss >> m;
+			while (ss.good()) {
+				ss >> tmp;
+				stop.push_back(tmp);
+			}
+			New_Bus(buses,stops, str1, stop);
+			stop.clear();
+		}
+		if (command == "BUSES_FOR_STOP") {
+			//Buses_For_Stop(map, str1);
+		}
+	}
+
+	
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
